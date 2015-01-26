@@ -6,9 +6,12 @@ body {
   background-attachment: fixed;
 }
 img {
-  /*display: none;*/
   padding: 1%, .5%, 0, .5%
   float left;
+}
+
+ul {
+  list-style-type: none;
 }
 
 li {
