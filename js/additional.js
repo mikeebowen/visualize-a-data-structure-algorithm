@@ -10,7 +10,7 @@ $(function(){
   var create = function(name, altitude, image) {
     var resort = new Resort(name, altitude, image);
     skiResorts.push(resort);
-    resort.domElement = $('<li class="mountains" data-altitude="' + resort.altitude + '"><img src="images/' + resort.image + '" />' + resort.name + '' + resort.altitude  + ' feet</li>');
+    resort.domElement = $('<li class="mountains" data-altitude="' + resort.altitude + '"><figure><img src="images/' + resort.image + '" /><figcaption>' + resort.name + ' ' + resort.altitude  + ' feet</li></figcaption></figure>');
     $("#resort-list").append(resort.domElement);
   };
 

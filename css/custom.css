@@ -12,11 +12,14 @@ img {
 }
 
 li {
-/*display: inline;*/
+display: inline-block;
 padding: 5%, 5%, 5%, 5%;
 margin: 5%, 5%, 5%, 5%;
 /*float: left;*/
 text-align:center;
+width: 150px;
+margin-top: 5px;
+vertical-align: top;
 }
 
 li:last-child {
