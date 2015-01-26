@@ -1,13 +1,25 @@
 /*CSS*/
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
 body {
+  margin: 0 auto;
   background-image: url(../images/background.jpg);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
+
 img {
-  padding: 1%, .5%, 0, .5%
-  float left;
+  position: relative;
+}
+
+h1 {
+  font-family: Trade Winds;
+  font-size: 1.75em;
+  text-align: left;
+  color: #C9CDC5;
+  margin-left: 5%
 }
 
 ul {
@@ -16,31 +28,64 @@ ul {
 
 li {
 display: inline-block;
-padding: 5%, 5%, 5%, 5%;
-margin: 5%, 5%, 5%, 5%;
-/*float: left;*/
+background-repeat: no-repeat;
+background-position: center;
 text-align:center;
-width: 150px;
-margin-top: 5px;
+width: 110px;
+height: 110px;
 vertical-align: top;
+padding: 5px, 5px, 5px, 5px;
+font-family: PT Sans Narrow;
+font-weight: bold;
+line-height: 40px
+font-size: 1.25em;
 }
 
-li:last-child {
-  /*display: none;*/
+header {
+  vertical-align: top;
 }
 
 .grid {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-top: 2%;
-  margin-bottom: 2%;
-  /*background-color: green;*/
+  margin-bottom: 2%
 }
 
-.resort-list {
-  background-color: green;
+.sort-button {
+  position: relative;
+  vertical-align: top;
+  margin-right: 15%;
+  font-family: Trade Winds;
+  font-size: 1.5em;
 }
 
-.sorting {
-  background-color: yellow;
+.explanation {
+  background-image: url(../images/snowboard-2.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 5px, 15px, 5px, 15px;
+  min-height: 200px;
+}
+
+.explanation p {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: #C9CDC5;
+  font-family: PT-Sans Narrow;
+}
+
+.winner {
+  font-family: Trade Winds;
+  font-size: 1.5em;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
