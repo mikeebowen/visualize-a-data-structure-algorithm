@@ -32,30 +32,35 @@ $(function(){
   create("Vail, Colorado" , 11570 , "vail-colorado-small.jpg");
   create("Taos Ski Valley, New Mexico" , 11819 , "taos-ski-valley-new-mexico-small.jpg");
   create("Winter Park, Colorado" , 12060 , "winter-park-colorado-small.jpg");
+
   // Create on click function to sort resorts
-  $("#sortButton").on("click", function() {
-    // create variable with length of list
-    var len = $("li").length;
-    // Create function to insert lower resort after previous resort that was higher
-    function addSorted() {
-      $current.prev().insertAfter($current);
+  // $("#sortButton").on("click", function() {
+  //   var len = $("li").length;
+  //   function insert() {
+  //     $current.prev().insertAfter($current);
+  //   }
+  //   for (i = 0; i < len ; i++) {
+  //     $current = $("li").eq(i);
+  //     while($current.data("altitude") < $current.prev().data("altitude")) {
+  //       insert();
+  //     }
+  //   }
+  //   // Add winning line to highest resort
+  //   $("li:last-child").append('<p class="winner">The tallest ski resort in the US</p>');
+  // });
+  $("#sortButton").on("click", function () {
+    var $current = $("li").first();
+
+    function insert($item) {
+      if (($item.prev().length) && ($item.data("altitude") < $item.prev().data("altitude"))) {
+           $item.prev().insertAfter($item);
+          setTimeout(insert, 100, $item);
+          // insert($item);
+        }else if ($item.next().length){
+          setTimeout(insert, 100, $item.next())
+          // insert($item.next());
+        }
     }
-    // This for loop runs once for every item in the list
-    for (i = 0; i < len ; i++) {
-      // Sets the value of $current to the current li
-      $current = $("li").eq(i);
-      // While the value of the current li is smaller than the previous perform the function
-      while($current.data("altitude") < $current.prev().data("altitude")) {
-        // call AddSorted function to insert small li after previous
-        addSorted();
-        // below works, but selects too many <li>s
-        // $current.addClass("sorting");
-        // $current.prev().removeClass("sorting");
-      }
-      // setTimeOut below, works, but makes the algorithm wrong
-      // setTimeOut(addSorted, 1* 1000, $current);
-    }
-    // Add winning line to highest resort
-    $("li:last-child").append('<p class="winner">The tallest ski resort in the US</p>');
+    insert($current);
   });
 });
